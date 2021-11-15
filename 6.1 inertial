@@ -4,18 +4,19 @@
 %% Inertial Brownian particle                             %%
 
 particles = 10^4;
-totalSimTime = 10^1;
-dt = 10^-4;                             % time increment
+totalSimTime = 10^-5;                   % 10 microseconds total sim time
+dt = 10^-9;                             % time increment
 timesteps = totalSimTime/dt;            % timestep
 kB = 1.38064*10^-23;                    % Boltzmann constant
-gamma = 1.3;                            % gas constant
-temperature = 285;                      % standard temperature
-T = zeros(1,totalSimTime);
-trajectory = zeros(timesteps,2);
-tau = rand*(10^-8);                     % τ = m/gamma a few nanoseconds
+gamma = 1.3;                              % gas constant
+temperature = 300;                      % standard temperature
+%T = zeros(1,totalSimTime);
+% trajectory = zeros(timesteps,2);
+trajectory = zeros(10^4,2);
+tau = randn*(10^-8);                     % τ = m/gamma a few nanoseconds
 termA = (2 + dt/tau)/(1 + dt/tau);
 termB = 1/(1 + dt/tau);
-termC = (sqrt(2*kB*temperature*gamma)*(dt^(3/2)))/(1 + dt/tau);
+termC = (sqrt(2*kB*temperature*gamma)*(dt^(3/2)))/((1 + dt/tau)*gamma*tau);
 trajectory(1,1) = 0;
 trajectory(2,1) = 0;
 trajectory(1,2) = 0;
