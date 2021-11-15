@@ -1,0 +1,46 @@
+%% Simulation of Complex Systems                          %%
+%% Kakkos Ioannis 930413-6030                             %%
+%% Exercise 6.1 Diffusion regimes for a Brownian particle %%
+%% Trapped Brownian Particle                              %%
+
+particles = 10^4;
+totalSimTime = 10^1;                    % 10 seconds total sim time
+dt = 10^-5;                             % time increment
+timesteps = totalSimTime/dt;            % timestep
+kB = 1.38064*10^-23;                    % Boltzmann constant
+%gamma = 1.88*10^(-8);                   % gas constant
+gamma = 1.3;
+temperature = 300;                      % standard temperature
+trajectory = zeros(10^6,2);
+termB = dt/gamma; 
+trajectory(1,1) = 0;
+trajectory(1,2) = 0;
+kx = 10^(-9);
+ky = 0.25*10^(-9);
+termC = sqrt(2*kB*temperature*dt/gamma);
+
+
+for i = 2:timesteps
+    trajectory(i,1) = trajectory(i-1,1) - termB*kx*trajectory(i-1,1)...
+        + termC*randn;
+    trajectory(i,2) = trajectory(i-1,2) - termB*ky*trajectory(i-1,2)...
+        + termC*randn;
+end
+
+% Plotting Inertial Brownian particle
+X = trajectory(:,1);
+Y = trajectory(:,2);
+figure;
+hold on
+title('Inertial Brownian particle');
+xlabel('x[m]');
+ylabel('y[m]');
+plot(X,Y);
+hold off
+
+
+
+
+
+
+
