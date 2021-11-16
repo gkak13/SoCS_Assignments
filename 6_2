@@ -37,6 +37,9 @@ for i = 1:g
     T(i) = i;
 end
 
+% Regularization function
+[regular,tau] = regularize(irregular,T);
+
 figure;
 hold on;
 title('Irregularly sampled trajectory');
@@ -46,3 +49,21 @@ X = T;
 Y = irregular;
 plot(X,Y,'o');
 hold off;
+
+function [x,tau] = regularize(irreg,Timeseries)
+
+tau = zeros(1,length(Timeseries));
+for i = 1:length(Timeseries)
+    tau(i) = i;
+    for j = 1:i
+        
+end
+
+
+
+
+
+end
+
+
+
