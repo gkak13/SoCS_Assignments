@@ -17,7 +17,7 @@ while steps <= timesteps
         irregular(i) = q;
         steps = steps + 1;
     else
-        irregular(i) = 0;
+        irregular(i) = nan;
     end
 end
 
@@ -31,7 +31,7 @@ for j = 1:length(irregular)
 end
 
 %T = reshape(T,1,length(irregular));
-irregular(irregular == 0) = nan;
+%irregular(irregular == 0) = nan;
 g = length(irregular);
 for i = 1:g
     T(i) = i;
