@@ -1,24 +1,40 @@
 %% Simulation of Complex Systems                                %%
 %% Kakkos Ioannis 930413-6030                                   %%
-%% Exercise 6.2 Regularizing and irregularly sampled trajectory %%
+%% Exercise 6.2 Regularizing an irregularly sampled trajectory %%
 
 timesteps = 100;
-irregular = zeros(1,timesteps);
-kB = 1.38064*10^-23;
-temperature = 300;
-dt = 10^-5;
-gamma = 1.88*10^-8;
-termB = dt/gamma;
-termC = sqrt(2*kB*temperature*dt/gamma);
-T = zeros(1,timesteps);
-for t = 1:timesteps
-    T(t) = t;
+% T = zeros(1,timesteps);
+% for t = 1:10*timesteps
+%     T(t) = t;
+% end
+steps = 0;
+i = 1;
+while steps <= timesteps
+    i = i + 1;
+    r = randn;
+    q = randn;
+    if r > 0
+        irregular(i) = q;
+        steps = steps + 1;
+    else
+        irregular(i) = 0;
+    end
 end
-irregular(1) = 10^-3;
-for i = 2:timesteps
-%      irregular(i) = irregular(i-1) - termB*kx*irregular(i-1)...
-%         + termC*randn;
-    irregular(i) = irregular(i-1) + irregular(i-1)*randn;
+
+s = 1;
+I = zeros(1,timesteps);
+for j = 1:length(irregular)
+    if irregular(j) ~= 0 && s <= timesteps
+        I(s) = irregular(j);
+        s = s + 1;
+    end
+end
+
+%T = reshape(T,1,length(irregular));
+irregular(irregular == 0) = nan;
+g = length(irregular);
+for i = 1:g
+    T(i) = i;
 end
 
 figure;
@@ -30,4 +46,3 @@ X = T;
 Y = irregular;
 plot(X,Y,'o');
 hold off;
-
