@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                                %%
-%% Kakkos Ioannis 930413-6030                                   %%
+%% Kakkos Ioannis                                               %%
 %% Exercise 16.1 Schelling's model of segregation               %%
 clear all; 
 
