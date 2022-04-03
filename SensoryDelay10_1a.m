@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                                %%
-%% Kakkos Ioannis 930413-6030                                   %%
+%% Kakkos Ioannis                                               %%
 %% Exercise 10.1 Simulation of a light sensitive robot          %%
 % a.
 % clear all; clc;
