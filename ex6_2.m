@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                                %%
-%% Kakkos Ioannis 930413-6030                                   %%
+%% Kakkos Ioannis                                               %%
 %% Exercise 6.2 Regularizing an irregularly sampled trajectory  %%
 clear all;clc;
 
