@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                          %%
-%% Kakkos Ioannis 930413-6030                             %%
+%% Kakkos Ioannis                                         %%
 %% Exercise 6.3 Scaled Brownian Motion                    %%
 
 %clear all;clc;
