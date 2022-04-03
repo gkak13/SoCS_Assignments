@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                                  %%
-%% Kakkos Ioannis 930413-6030                                     %%
+%% Kakkos Ioannis                                                 %%
 %% Exercise 16.6 Sugarscape with a finite lifespan for the agents %%
 clear all;
 
