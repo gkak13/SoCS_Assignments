@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                          %%
-%% Kakkos Ioannis 930413-6030                             %%
+%% Kakkos Ioannis                                         %%
 %% Exercise 6.4 Continuous time random walk               %%
 
 particles = 10^4;
