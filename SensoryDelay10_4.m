@@ -1,5 +1,5 @@
 %% Simulation of Complex Systems                                %%
-%% Kakkos Ioannis 930413-6030                                   %%
+%% Kakkos Ioannis                                               %%
 %% Exercise 10.4 Multiple robots with sensory delay             %%
  clear all; clc;
 
